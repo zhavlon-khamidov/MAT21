@@ -16,6 +16,7 @@ public class Book {
     private Long id;
     private String title;
     private String isbn;
+    @Builder.Default
     private int edition = 1;
 
 }
