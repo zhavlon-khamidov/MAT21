@@ -26,7 +26,7 @@ class BookMapperTest {
                 .build();
 
         Book book = Book.builder()
-                .id(1L)
+                .id(12L)
                 .title("Test Book")
                 .isbn("13543434")
                 .publisher(publisher)
@@ -37,7 +37,7 @@ class BookMapperTest {
         BookDTO dto = bookMapper.bookToBookDto(book);
 
         assertNotNull(dto);
-        assertEquals( 1, dto.getId());
+        assertEquals( 12L, dto.getId());
         assertEquals("Test Book", dto.getTitle());
         assertEquals("13543434", dto.getIsbn());
         assertNotNull(dto.getPublisher());

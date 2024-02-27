@@ -17,5 +17,5 @@ public class PublisherDTO {
     private String name;
     private String email;
 
-    private Set<BookDTO> books;
+    private Set<Long> bookIds;
 }
