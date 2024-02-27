@@ -29,5 +29,6 @@ class BookServiceJPATest {
         assertEquals( 1, dto.getId());
         assertEquals("Test Book", dto.getTitle());
         assertEquals("13543434", dto.getIsbn());
+        assertTrue(dto.getEdition()>0);
     }
 }

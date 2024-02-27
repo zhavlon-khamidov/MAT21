@@ -5,16 +5,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BookDTO {
-    private Long id;
-    private String title;
-    private String isbn;
-    @Builder.Default
-    private int edition = 1;
+public class PublisherDTO {
 
-    private PublisherDTO publisher;
+    private long id;
+    private String name;
+    private String email;
+
+    private Set<BookDTO> books;
 }
