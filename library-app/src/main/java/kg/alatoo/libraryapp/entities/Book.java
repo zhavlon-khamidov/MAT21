@@ -23,7 +23,7 @@ public class Book {
     @Id
     @GeneratedValue
     @EqualsAndHashCode.Include
-    @Column(updatable = false, columnDefinition = "varchar(10)")
+    @Column(updatable = false)
     private Long id;
     @Column(name = "name",unique = true,nullable = false)
     private String title;
