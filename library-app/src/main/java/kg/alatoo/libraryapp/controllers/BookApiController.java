@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.NoSuchElementException;
-
 @RestController
 @RequiredArgsConstructor
 public class BookApiController {
@@ -17,8 +15,21 @@ public class BookApiController {
 
     @GetMapping("/api/v1/book/{id}")
     public BookDTO getBook(@PathVariable Long id) {
+
+        /*BookDTO dto = bookService.getBookById(id).orElse(null);
+        if (dto != null) {
+            return dto;
+        } else {
+            throw new NoSuchElementException();
+        }*/
+
         return bookService
                 .getBookById(id)
-                .orElseThrow(NoSuchElementException::new);
+//                .orElseThrow(NoSuchElementException::new);
+//                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+                .orElseThrow(NotFoundException::new);
     }
+
+
+
 }
