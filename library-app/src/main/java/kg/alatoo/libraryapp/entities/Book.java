@@ -1,6 +1,8 @@
 package kg.alatoo.libraryapp.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.List;
@@ -25,8 +27,12 @@ public class Book {
     @EqualsAndHashCode.Include
     @Column(updatable = false)
     private Long id;
+
+    @NotNull
+    @NotBlank
     @Column(name = "name",unique = true,nullable = false)
     private String title;
+
     @Column(length = 50)
     private String isbn;
     @Builder.Default
